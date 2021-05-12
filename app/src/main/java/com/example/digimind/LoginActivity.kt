@@ -3,22 +3,22 @@ package com.example.digimind
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+
+    private lateinit var auth:FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        auth = Firebase.auth
+        auth= FirebaseAuth.getInstance()
+
         val btn_registrarse: Button = findViewById(R.id.btn_registrarse)
         val btn_contra: TextView = findViewById(R.id.tv_olvidasteContra)
         val btn_ingresar: Button = findViewById(R.id.btn_ingresar)
